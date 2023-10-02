@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./eje1.css">
+    <script src="./eje.js"></script>
+</head>
+
+<body>
+  
+    <div class="contenedor">
+
+        <h1>Registrate</h1>
+        <hr>
+
+        <div class="grupo">
+
+            <label for="">Nombre:</label>
+            <input id="nombre" type="text" placeholder="Ingresa tu Nombre">
+        </div>
+        <div class="grupo">
+            <label for="">Apellido:</label>
+            <input id="apellido" type="text" placeholder="Ingresa tu Apellido">
+        </div>
+
+
+
+
+        <div class="op">
+            <label for="">Genero:</label>
+            <br>
+            <div class="opciones">
+                <label >Masculino:</label>
+                <input name="genero" id="Masculino" class="radio" type="radio" >
+            </div>
+            <div class="opciones">
+                <label for="">Femenino:</label>
+                <input name="genero" id="Femenino" class="radio" type="radio">
+            </div>
+        </div>
+
+        <div class="select-container ">
+            <label for="">Tipo de Documento:</label>
+            <select id="tipo">
+
+                <option value="cedula de extranjeria">cedula de extranjeria</option>
+                <option value="cedula de identidad">cedula de identidad</option>
+                <option value="tarjeta de identidad">tarjeta de identidad</option>
+            </select>
+
+
+        </div>
+        <div class="grupo">
+            <label for="">Numero de Documento:</label>
+            <input id="documento" type="number" placeholder="Numero de Documento">
+        </div>
+        <div class="grupo">
+            <label for=""> Telefono:</label>
+            <input id="telefono" type="text" placeholder="Numero de Telefono">
+        </div>
+        <div class="grupo">
+            <label for="">Email:</label>
+            <input id="email" type="email" placeholder="Ingresa tu Email">
+        </div>
+        <div class="grupo">
+            <label for="">Feha de Nacimiento:</label>
+            <input id="fecha" class="dato" type="date">
+        </div>
+
+
+        <div class="grupo">
+
+            <button value="enviar" onclick="registro()">Registrar</button>
+        </div>
+          <p>¿Ya tienes cuenta?</p>
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+*{
+    margin: 0;   
+   box-sizing: border-box;
+}
+body{
+  background-color: gray; 
+}
+.contenedor {
+
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 10%;
+    margin-right: 10%;
+    
+  
+
+
+}
+.contenedor >*{
+
+
+   margin: 10%;
+   width: 90%;
+   border-radius: 5%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: wheat;
+
+   
+  
+   
+}
+.cabecera{
+       
+      background-color: red;
+      height: 80%;
+      width: 100%;
+      color: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+   bottom: 5%;
+   border-top-right-radius: 5%;
+   border-top-left-radius: 5%;
+   padding: 4%;
+   font-size: 20px;
+  
+    
+     
+}
+.cabecera h1{
+           
+    margin-left: 2%;
+ 
+}
+.fechas td{
+           
+    padding: 4px;
+    text-align: center;
+    
+    font-weight: bold;
+}
+.dias{
+           
+    color: red;
+}
+.gris{
+           
+color: rgb(173, 166, 166);
+}
+.gancho{
+           
+      display: flex;
+      flex-direction: row;
+      gap: 70%;
+      position: relative;
+      top: 20%;
+ 
+    }
+    .gancho >*{
+           
+     }
+    .barra{
+    
+           margin-left: 10%;
+          color: gray;
+          transform: scaleX(2);
+        
+        }
+        .barra2{
+     
+           color: gray;
+           transform: scaleX(2);
+         }
+
+         
+@media(max-width: 1450px){
+            
+    .fechas td{
+
+      padding: 2px;
+    }
+    
+    }
+@media(max-width: 1300px){
+            
+    .contenedor {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 70%;
+    
+    }
+    .fechas td{
+           
+        padding: 8px;
+        text-align: center;
+        /* padding: 2%; */
+    }
+}
+
+
+.contenedor>* {
+       width: 95%;
+  
+
+}
+@media(max-width: 1180px){
+            
+    .contenedor {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+    .fechas td{
+           
+        padding:10px ;
+        text-align: center;
+        height: 5%;
+    }
+}
+@media(max-width: 900px){
+            
+    .contenedor {
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    
+    }
+    .contenedor>* {
+           width: 65%;
+    
+    }
+}
+@media(max-width: 750px){
+            
+   
+    .contenedor>* {
+           width: 70%;
+    
+    }
+}
+@media(max-width: 660px){
+   
+    .contenedor>* {
+           width: 90%;
+    
+    }
+}
+@media(max-width: 520px){
+   
+    .contenedor>* {
+           width: 100%;
+    
+    }
+}
+
