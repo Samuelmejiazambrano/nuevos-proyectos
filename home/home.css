@@ -33,12 +33,19 @@ img{
 
    width: 20%;
    height: 60%;
-   background-color:yellow; 
+ 
    border-radius: 20px;
    margin-top: 5%;
+   background-color:rgba(255, 255, 255, 0.445) ;
+   box-shadow: 5px 5px 6px 4px;
   
 }
 
+
+.cajas:hover{
+ background-color: yellow;
+
+}
 
 .h{
 
@@ -107,13 +114,14 @@ img{
 
       display: grid;
       grid-template-columns: repeat(2,1fr);
-      margin-left: 26%;
+      margin-left: 20%;
    }
    .proyectos>*{
 
-      width: 40%;
-      height: 50%;
-      background: red;
+      width: 60%;
+      height: 70%;
+    
+     
      
    }
 
@@ -128,10 +136,15 @@ img{
       }
       .proyectos>*{
    
-         width: 30%;
-         margin-left: 15%;
+         width: 60%;
+         
        
         
+      }
+      .caja img{
+
+         width: 30%;
+         height: 80%;
       }
    
       }
