@@ -10,6 +10,7 @@ body {
 
     height: 150vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
    background-image: url(./35eb7d5bce221d9392feb1e426ba48af.jpg);
@@ -73,13 +74,14 @@ label {
     height: 40%;
 }
 
-button {
+.buton {
     width: 250px;
     height: 30px;
     border-radius: 12px;
     padding: 5%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -123,6 +125,30 @@ hr {
     font-size: 15px;
 
 } 
+table{
+
+     margin: 40px;
+     width: 98%;
+     height: 80%;
+     
+     
+}
+#tabla2 td{
+
+background: gray;
+text-align: center;
+padding: 5px;
+}
+
+#tabla td{
+     background-color: aqua;
+     padding: 1%;
+     text-align: center;
+}
+h1{
+
+    color: white;
+}
 
 @media screen and (max-height: 1100px) {
 

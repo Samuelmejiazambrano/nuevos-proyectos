@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./eje1.css">
-   
+
 </head>
 
 <body>
     <script src="./eje.js"></script>
-  
+
     <div class="contenedor">
 
         <h1>Registrate</h1>
@@ -20,7 +20,8 @@
         <div class="grupo">
             <h3 id="alerta"></h3>
             <label for="">Nombre:</label>
-            <input id="nombre" type="text"  placeholder="Ingresa tu Nombre" pattern="[A-Za-z]+" title="Ingresa solo letras">
+            <input id="nombre" type="text" placeholder="Ingresa tu Nombre" pattern="[A-Za-z]+"
+                title="Ingresa solo letras">
         </div>
         <div class="grupo">
             <h3 id="alerta2"></h3>
@@ -35,7 +36,7 @@
             <label for="">Genero:</label>
             <br>
             <div class="opciones">
-                <label >Masculino:</label>
+                <label>Masculino:</label>
                 <input name="genero" id="Masculino" class="radio" type="radio" value="Masculino">
             </div>
             <div class="opciones">
@@ -75,16 +76,43 @@
             <label for="">Feha de Nacimiento:</label>
             <input id="fecha" class="dato" type="date">
         </div>
-       
+
 
         <div class="grupo">
             <h3 id="alerta7"></h3>
-            <button value="enviar" onclick="validar()">Registrar</button>
+            <button class="buton" value="enviar" onclick="validar()">Registrar</button>
         </div>
-          <p>¿Ya tienes cuenta?</p>
-    </div>
+        <p>¿Ya tienes cuenta?</p>
+
     </div>
 
+    </div>
+    <h1>Registro</h1>
+    <table>
+        <thead id="tabla2">
+
+            <tr>
+
+                <td>nombre</td>
+                <td>Apellido</td>
+                <td>Genero</td>
+                <td>Tipo de documento</td>
+                <td>Numero de documento</td>
+                <td>Correo electronico</td>
+                <td>fecha</td>
+                <td>Telefono</td>
+
+                <td>opciones</td>
+
+
+            </tr>
+        </thead>
+        <tbody id="tabla">
+
+
+        </tbody>
+
+    </table>
 </body>
 
 </html>
