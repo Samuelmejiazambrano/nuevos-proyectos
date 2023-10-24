@@ -21,18 +21,18 @@ img{
 
 .proyectos{
 
-   display: flex;
-   flex-direction: row;
-   display: flex;
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
    justify-content: center;
    align-items: center;
-   gap: 10%;
+   gap: 5%;
    margin: 5%;
+   margin-top: 10%;
 }
 .proyectos>*{
 
-   width: 20%;
-   height: 60%;
+   width: 300px;
+   height: 70%;
  
    border-radius: 20px;
    margin-top: 5%;
@@ -113,12 +113,12 @@ img{
    .proyectos{
 
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(3,1fr);
       margin-left: 20%;
    }
    .proyectos>*{
 
-      width: 60%;
+      width: 80%;
       height: 70%;
     
      
