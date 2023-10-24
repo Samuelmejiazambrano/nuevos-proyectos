@@ -1,0 +1,159 @@
+*{
+
+   margin: 0;
+   height: 100%;
+}
+body{
+
+   background-image: url(./bastien-nvs-SprV1eqNrqM-unsplash2.jpg);
+}
+.cont{
+
+   display: grid;
+   grid-template-rows: 10% 20% auto;
+}
+img{
+   width: 100%;
+   height: 60%;
+   position: relative;
+
+}
+
+.proyectos{
+
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   justify-content: center;
+   align-items: center;
+   gap: 5%;
+   margin: 5%;
+   margin-top: 10%;
+}
+.proyectos>*{
+
+   width: 300px;
+   height: 70%;
+ 
+   border-radius: 20px;
+   margin-top: 5%;
+   background-color:rgba(255, 255, 255, 0.445) ;
+   box-shadow: 5px 5px 6px 4px;
+  
+}
+
+
+.cajas:hover{
+ background-color: yellow;
+
+}
+
+.h{
+
+   background-color: rgba(38, 0, 255, 0.5); 
+
+}
+.h h1{
+
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   font-size: 50px;
+   color: white;
+}
+.caja{
+
+      height: 200%;
+      width: 100%;
+      display: flex;
+      flex-direction: column; 
+ 
+
+      
+}
+.caja img{
+   width: 15%;
+   height: 80%;
+   margin-right: 40%;
+   border-radius: 120px;
+}
+.f{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin-top: 3%;
+ 
+}
+.f img{
+ margin-left:40%;
+
+ 
+
+}
+.proyectos a{
+
+   text-decoration: none;
+   color: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 30px;
+   font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    bottom: 30%;
+}
+.proyectos img{
+
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+}
+@media (max-width:1300px) {
+ 
+   .proyectos{
+
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin-left: 20%;
+   }
+   .proyectos>*{
+
+      width: 80%;
+      height: 70%;
+    
+     
+     
+   }
+
+   }
+   @media (max-width:700px) {
+ 
+      .proyectos{
+   
+         display: grid;
+         grid-template-columns: repeat(1,1fr);
+         margin-left: 30%;
+      }
+      .proyectos>*{
+   
+         width: 60%;
+         
+       
+        
+      }
+      .caja img{
+
+         width: 30%;
+         height: 80%;
+      }
+   
+      }
+     
+   
+  
+
+
+
+
+
+

@@ -1,0 +1,454 @@
+* {
+
+   margin: 0;
+   font-family: sans-serif;
+   box-sizing: border-box;
+
+
+}
+
+body {
+
+
+   background-color: gray;
+
+
+
+}
+
+.contenedor {
+   display: flex;
+   flex-direction: row;
+   width: 50%;
+   margin: auto;
+   background-color: white;
+
+}
+
+.barra {
+
+   /* height: 130vh; */
+   width: 8%;
+   /* right: 0; */
+   background: linear-gradient(#00B8A9, rgb(0, 102, 128));
+
+}
+
+.info {
+
+   display: grid;
+   grid-template-rows: repeat(2, 1fr);
+   width: 92%;
+
+
+
+}
+
+.cot1 {
+
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+
+
+
+}
+
+.cot1>* {
+
+   height: 12%;
+   width: 100%;
+
+
+
+}
+
+.img {
+
+   height: 100%;
+   width: 30%;
+   margin-left: 20%;
+
+}
+
+.fecha {
+
+   margin-top: 10%;
+   text-align: center;
+}
+
+.fecha h1 {
+
+   font-size: 300%;
+   margin-bottom: 10%;
+
+}
+
+.metodo {
+
+   
+   margin-top: 20%;
+   height: 12%;
+   margin-left: 10%;
+
+
+}
+strong{
+
+color: #00B8A9;
+}
+
+.cot1 h1 {
+
+   color: #00B8A9;
+
+}
+
+.pago {
+   font-size: 18px;
+   font-family: sans-serif;
+   margin-top: 20%;
+
+   display: grid;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.pago h1 {
+   font-size: 18px;
+   text-align: center;
+
+}
+
+
+table {
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-collapse: collapse;
+   border: none;
+
+
+
+
+}
+
+table td {
+   width: 200px;
+
+   border: 0;
+   text-align: center;
+
+   border: none;
+   padding: 10px;
+}
+
+.tabla {
+
+   margin-bottom: 10%;
+   height: 60%;
+}
+
+.tarjeta {
+
+
+   display: none;
+}
+
+
+.blanco td {
+
+   background-color: white;
+   border-color: white;
+
+}
+
+.gris {
+
+   background-color: #dcdcdc;
+
+}
+
+.diseño {
+
+   border-top: 3px solid #dcdcdc;
+
+}
+
+.titulo {
+
+   background-color: #00B8A9;
+   border-color: #00B8A9;
+   color: white;
+
+}
+
+
+
+.cont3 {
+
+
+   display: flex;
+   height: 10%;
+   margin-bottom: 2%;
+   justify-content: center;
+   align-items: center;
+
+
+}
+
+.p {
+
+   margin-right: 20%;
+
+
+}
+
+hr {
+
+
+   border: 2px solid #00B8A9;
+   margin-left: 5%;
+   margin-right: 5%;
+   width: 90%;
+
+}
+
+.h1 {
+
+   font-size: 30px;
+   color: #00B8A9;
+}
+
+.footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 2%;
+
+
+
+}
+
+.footer p {
+
+
+   margin-top: 2%;
+
+}
+
+@media (max-width:1300px) {
+
+   .cot1 {
+
+
+      display: grid;
+      grid-template-columns: repeat(1, 3fr);
+      justify-content: center;
+      align-items: center;
+
+   }
+
+   .pago {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 20%;
+   }
+
+   .metodo {
+
+      margin-left: 30%;
+     
+
+   }
+
+   .img {
+      
+      margin: auto;
+   }
+
+   table {
+
+      margin-top: 20%;
+      border-collapse: collapse;
+      border: none;
+
+
+   }
+
+   .cont3 {
+
+      display: flex;
+      flex-direction: column;
+
+
+   }
+
+   .p {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+
+   }
+
+   .h1 {
+      margin: auto;
+      margin-top: 10%;
+
+   }
+}
+
+@media (max-width:1000px) {
+
+  
+   .container-tarjeta {
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10%;
+
+
+
+   }
+
+   .tarjeta {
+      display: block;
+      width: 50%;
+      height: 40%;
+      /* Ajusta el ancho de las tarjetas para que se ajusten en dos columnas */
+      padding: 10px;
+      
+    
+  
+
+
+   }
+
+   table {
+      display: none;
+   }
+
+   .footer p{
+
+      
+      margin-top: 2%;
+      width: 80%;
+   }
+   .campo {
+
+       background-color: #dcdcdc;
+       border: 1px solid;
+       padding: 5%;
+    
+   }
+   .verde{
+
+      background-color: #00B8A9;
+      border: 1px solid;
+      color: rgb(17, 16, 16);
+      font-family:Arial, Helvetica, sans-serif;
+      text-align: center;
+     
+  }
+      }
+
+      @media (max-width:850px) {
+
+         .metodo{
+
+           
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          right: 30%;
+         }
+         .cont3{
+
+              margin-top: 30%;
+              
+            
+           }
+           .p{
+
+            text-align: center;
+            
+           }
+      }
+      @media (max-width:600px) {
+       .cot1{
+          
+         text-align: center;
+        
+         
+  
+        }
+   .footer{
+          
+      text-align: center;
+      
+
+     }
+     .metodo{
+          
+      width: 40%;
+       margin-left: 55%;
+      
+
+     }
+     .fecha {
+          
+      width: 40%;
+      margin-left: 25%;
+
+     }
+.fecha h1{
+          
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+
+
+  }
+  .pago{
+          
+
+    width: 40%;
+    margin-left: 25%;
+
+ 
+ 
+   }
+   .cont3{
+          
+
+      width: 40%;
+     margin-left: 10%;
+  
+   
+   
+     }
+     .h1{
+          
+
+     font-size: 20px;
+   
+   
+     }
+      }
+
+      
