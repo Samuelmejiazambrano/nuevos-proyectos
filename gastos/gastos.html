@@ -11,22 +11,30 @@
 <body>
 
     <div class="contenedor">
-
+        <div id="alerta" class="alerta">
+            <label>Presupuesto</label>
+            <input id="alertainput" type="number" placeholder="ingrese su presupuesto">
+            <button onclick="alerta()">anadir</button>
+        </div>
         <h1 class="h1">Gasto Semanal</h1>
         <div class="cajas">
 
             <div class="caja1">
                 <h1 class="h1dos">Añade tus gastos aqui</h1>
+                <div class=" alertas">
+                    <h3 id="correcto"></h3>
+                    <h3 id="agotado"></h3>
+                </div>
                 <div class="input">
                     <div class="inpdos">
-                        <label>Gasto</label>
-                        <input type="text" placeholder="Nombre Gasto">
+                        <label>Nombre Gasto:</label>
+                        <input id="nombre" type="text" placeholder="Nombre Gasto">
                     </div>
                     <div class="inpuno">
-                        <label>Cantidad</label>
-                        <input type="text" placeholder="Ingrese la Cantidad">
+                        <label>Cantidad:</label>
+                        <input id="cantidad" type="number" placeholder="Ingrese la Cantidad">
                     </div>
-                    <input class="buton" type="submit" value="agregar">
+                    <input id="btn" onclick="opciones()"  class="buton" type="submit" value="agregar">
 
 
                 </div>
@@ -37,21 +45,19 @@
                 <h1 class="h1tres">Listado</h1>
                 <div class="tabla">
                     <table>
-                        <tr>
-                            <td class="nombre">nombre</td>
-                            <td class="saldo">saldo</td>
-                            <td class="enviar"><button>enviar</button></td>
+                        <tbody id="tabla">
 
-                        </tr>
+                       
+                        </tbody>
                     </table>
                 </div>
 
                 <div class="card">
 
-                    <div>
+                    <div id="presupuesto">
                         <p>Presupuesto:</p>
                     </div>
-                    <div>
+                    <div id="restante">
                         <p>Restante:</p>
                     </div>
                 </div>
@@ -63,6 +69,8 @@
     </div>
 
 
+    <script src="./gastos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
