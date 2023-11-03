@@ -1,12 +1,12 @@
 let gastos = [];
 let presupuestoInicial = 0;
 let presupuestoRestante = 0;
-
+let gastos_totales=0
 
 function alerta() {
   let alertaDiv = document.getElementById("alerta");
   let presupuestoInicial = parseInt(document.getElementById("alertainput").value);
-
+  gastos_totales=presupuestoInicial
   if (!isNaN(presupuestoInicial) && presupuestoInicial> 0) {
     alertaDiv.style.visibility = "hidden";
     alertaDiv.style.height = "0";
@@ -37,13 +37,11 @@ function opciones() {
 
   let alertaDiv = document.getElementById("alerta");
   let presupuestoInput = parseInt(document.getElementById("alertainput").value);
-  let resta = presupuestoInput - cantidad;
-  let porcentaje = presupuestoInput * 0.2;
+  // let resta = presupuestoInput - cantidad;
+  let porcentaje = gastos_totales * 0.2;
 
-  document.getElementById("restante").textContent = `restante ${formatearMoneda(
-    resta
-  )}`;
-  console.log(resta);
+
+
 
   let nombre = document.getElementById("nombre").value;
 
@@ -65,10 +63,13 @@ function opciones() {
       text: "Ingrese la cantidad",
     });
   } else {
-    
+    gastos_totales-=cantidad
+    console.log(gastos_totales);
 pintar()
-  
-    if (resta <= 0) {
+document.getElementById("restante").textContent = `restante ${formatearMoneda(
+  gastos_totales
+)}`;
+    if (gastos_totales <= 0) {
       let correcto = document.getElementById("correcto");
       correcto.textContent = "correcto";
       correcto.style.display = "block";
@@ -78,11 +79,11 @@ pintar()
       document.getElementById("btn").disabled = true;
     } else {
       document.getElementById("agotado").textContent = "";
+      document.getElementById("btn").disabled = false;
     }
 
-    if (resta <= porcentaje) {
-      document.getElementById("restante").style.backgroundColor =
-        "rgb(218, 23, 23)";
+    if (gastos_totales <= porcentaje) {
+      document.getElementById("restante").style.backgroundColor ="rgb(218, 23, 23)";
     } else {
       document.getElementById("restante").style.backgroundColor = "";
     }
@@ -104,7 +105,7 @@ function pintar(params) {
     let eliminar = document.createElement("button");
     eliminar.textContent = "❌";
     eliminar.addEventListener("click", () => {
-      borrar(index);
+      borrar(index,item);
     });
     td1.classList.add("nombres");
     td2.classList.add("saldo");
@@ -129,14 +130,15 @@ function pintar(params) {
 
 
 
-function borrar(index) {
+function borrar(index,i) {
   index = index;
   gastos.splice(index, 1);
   document.getElementById("tabla").innerHTML = "";
    pintar()
    
-
- 
+  let retroceso=gastos_totales+i.presupuestoRestante;
+  document.getElementById("restante").textContent =  retroceso.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
+  console.log(" hola "+ retroceso);
+  console.log();
 }
-
 
