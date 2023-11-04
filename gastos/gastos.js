@@ -7,10 +7,11 @@ function alerta() {
   let alertaDiv = document.getElementById("alerta");
   let presupuestoInicial = parseInt(document.getElementById("alertainput").value);
   gastos_totales=presupuestoInicial
+  presupuestoRestante -= presupuestoInicial;
   if (!isNaN(presupuestoInicial) && presupuestoInicial> 0) {
     alertaDiv.style.visibility = "hidden";
     alertaDiv.style.height = "0";
-    presupuestoRestante = presupuestoInicial;
+    document.getElementById("btn").disabled = false;
     console.log("Presupuesto añadido");
   } else {
     console.log("Presupuesto no válido");
@@ -18,6 +19,7 @@ function alerta() {
       title: "Error",
       text: "Ingrese el presupuesto",
     });
+    document.getElementById("btn").disabled = true; 
     document.getElementById("alertainput").value = "";
   }
   document.getElementById(
@@ -65,6 +67,7 @@ function opciones() {
   } else {
     gastos_totales-=cantidad
     console.log(gastos_totales);
+    // console.log("este es el presupuesto restante:"+t);
 pintar()
 document.getElementById("restante").textContent = `restante ${formatearMoneda(
   gastos_totales
@@ -82,11 +85,7 @@ document.getElementById("restante").textContent = `restante ${formatearMoneda(
       document.getElementById("btn").disabled = false;
     }
 
-    if (gastos_totales <= porcentaje) {
-      document.getElementById("restante").style.backgroundColor ="rgb(218, 23, 23)";
-    } else {
-      document.getElementById("restante").style.backgroundColor = "";
-    }
+   
   }
  
 }
@@ -94,6 +93,17 @@ document.getElementById("restante").textContent = `restante ${formatearMoneda(
 
 
 function pintar(params) {
+  let nuevoTotalGastos = gastos.reduce((total, gasto) => total + gasto.cantidad, 0);
+  let porcentaje = presupuestoInicial * 0.2;
+  let retroceso = presupuestoInicial - nuevoTotalGastos;
+
+  document.getElementById("restante").textContent = formatearMoneda(retroceso);
+
+  if (nuevoTotalGastos <= porcentaje) {
+    document.getElementById("restante").style.backgroundColor = "rgb(218, 23, 23)"; // Cambiar a rojo si el total de gastos es menor o igual al 20% del presupuesto inicial
+  } else {
+    document.getElementById("restante").style.backgroundColor = "#5a88de"; // Cambiar a azul si el total de gastos es mayor al 20% del presupuesto inicial
+  }
   
   let frag = document.createDocumentFragment();
   document.getElementById("tabla").innerHTML = "";
@@ -130,15 +140,30 @@ function pintar(params) {
 
 
 
-function borrar(index,i) {
-  index = index;
-  gastos.splice(index, 1);
-  document.getElementById("tabla").innerHTML = "";
-   pintar()
-   
-  let retroceso=gastos_totales+i.presupuestoRestante;
-  document.getElementById("restante").textContent =  retroceso.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
-  console.log(" hola "+ retroceso);
-  console.log();
+function borrar(index, i) {
+  let gastoEliminado = gastos[index].cantidad; 
+  gastos.splice(index, 1); 
+  pintar();
+  let presupuestoInicial = parseInt(document.getElementById("alertainput").value);
+
+  let nuevoTotalGastos = gastos.reduce((total, gasto) => total + gasto.cantidad, 0);
+  let porcentaje = nuevoTotalGastos  * 0.2;
+ 
+  let retroceso = presupuestoInicial - nuevoTotalGastos;
+  
+  document.getElementById("restante").textContent = formatearMoneda(retroceso);
+
+  if (gastos_totales<= porcentaje) {
+    document.getElementById("restante").style.backgroundColor ="rgb(218, 23, 23)";
+  } else {
+    document.getElementById("restante").style.backgroundColor = "#5a88de";
 }
+
+  console.log(presupuestoInicial);
+  console.log(nuevoTotalGastos);
+
+}
+
+
+
 
