@@ -99,10 +99,11 @@ function pintar(params) {
 
   document.getElementById("restante").textContent = formatearMoneda(retroceso);
 
-  if (nuevoTotalGastos <= porcentaje) {
-    document.getElementById("restante").style.backgroundColor = "rgb(218, 23, 23)"; // Cambiar a rojo si el total de gastos es menor o igual al 20% del presupuesto inicial
+  if (nuevoTotalGastos<porcentaje) {
+    
+    document.getElementById("restante").style.backgroundColor = "rgb(218, 23, 23)"; 
   } else {
-    document.getElementById("restante").style.backgroundColor = "#5a88de"; // Cambiar a azul si el total de gastos es mayor al 20% del presupuesto inicial
+    document.getElementById("restante").style.backgroundColor = "#5a88de"; 
   }
   
   let frag = document.createDocumentFragment();
@@ -147,18 +148,18 @@ function borrar(index, i) {
   let presupuestoInicial = parseInt(document.getElementById("alertainput").value);
 
   let nuevoTotalGastos = gastos.reduce((total, gasto) => total + gasto.cantidad, 0);
-  let porcentaje = nuevoTotalGastos  * 0.2;
  
+  let porcentaje = gastos_totales * 0.2;
+  if (nuevoTotalGastos< porcentaje) {
+    document.getElementById("restante").style.backgroundColor ="rgb(218, 23, 23)";
+  } else {
+    document.getElementById("restante").style.backgroundColor = "";
+}
   let retroceso = presupuestoInicial - nuevoTotalGastos;
   
   document.getElementById("restante").textContent = formatearMoneda(retroceso);
-
-  if (gastos_totales<= porcentaje) {
-    document.getElementById("restante").style.backgroundColor ="rgb(218, 23, 23)";
-  } else {
-    document.getElementById("restante").style.backgroundColor = "#5a88de";
-}
-
+  
+console.log(porcentaje);
   console.log(presupuestoInicial);
   console.log(nuevoTotalGastos);
 

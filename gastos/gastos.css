@@ -164,10 +164,11 @@ button {
   margin-right: 20px;
 }
 .nombres {
-     background-color: rgb(124, 31, 31);
+     background-color: rgb(105, 124, 31);
      padding: 1px;
      position: relative;
      right: 30px;
+     color: white;
 }
 .saldo{
 
