@@ -38,6 +38,16 @@ body,html{
 
   
 }
+#nombre{
+  position: relative;
+   top: 20px;
+    
+}
+.nombre2{
+  position: relative;
+   top: 20px;
+    
+}
 input {
   height: 2%;
 }
@@ -134,7 +144,7 @@ button {
 .h1tres{
       
     position: relative;
-    bottom:  10%; 
+    /* bottom:  10%;  */
       
 }
 .card{
@@ -148,11 +158,11 @@ button {
 .tabla {
 
     border: 1px solid;
-    width: 50%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;  
-    max-height: 200px; 
+    max-height: 300px; 
     overflow-y: auto;
     
     
@@ -160,8 +170,9 @@ button {
 
  tbody tr td{
 
-  padding: 10px;
+  padding: 5px;
   margin-right: 20px;
+ 
 }
 .nombres {
      background-color: rgb(105, 124, 31);
@@ -169,12 +180,16 @@ button {
      position: relative;
      right: 30px;
      color: white;
+     width: 20px;
+     height: 20px;
+     text-align: center;
 }
 .saldo{
 
     background-color: aqua;
     height: 10px;
     width: 20px;
+    text-align: center;
 }
 .enviar{
  width: 50px;
@@ -183,7 +198,7 @@ button {
  left: 50px;
 }
 .alerta{
-  background-color: #5a88de;
+  background-color: #487cdb;
   height: 120px;
   width: 500px;
  
@@ -244,7 +259,7 @@ button {
 }
 .alertas >*{
     width: 300px;
-    height: 40px;
+    height: 30px;
    
     border: 2px solid;
      display: none;
@@ -259,12 +274,21 @@ button {
 }
  
 
-.alertas h3{
+h3{
+    
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 3px;
  
+ 
+
 }
-#agotado{
+#agotado {
 
   background-color: rgb(218, 23, 23);
+position: relative;
+top: 10%;
 }
 #correcto{
 
