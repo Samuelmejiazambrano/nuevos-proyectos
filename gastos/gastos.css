@@ -168,34 +168,32 @@ button {
     
 }
 
+
  tbody tr td{
 
-  padding: 5px;
+  padding: 2px;
   margin-right: 20px;
  
 }
 .nombres {
-     background-color: rgb(105, 124, 31);
-     padding: 1px;
-     position: relative;
-     right: 30px;
-     color: white;
-     width: 20px;
-     height: 20px;
-     text-align: center;
+  background-color: rgb(124, 31, 31);
+  padding: 1px;
+  position: relative;
+  right: 30px;
+  text-align: center;
 }
 .saldo{
 
-    background-color: aqua;
-    height: 10px;
-    width: 20px;
-    text-align: center;
+ background-color: aqua;
+ height: 10px;
+ width: 20px;
+ text-align: center;
 }
 .enviar{
- width: 50px;
- height: 10px;
- position: relative;
- left: 50px;
+width: 50px;
+height: 10px;
+position: relative;
+left: 50px;
 }
 .alerta{
   background-color: #487cdb;

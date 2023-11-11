@@ -19,7 +19,7 @@ function alerta() {
       title: "Error",
       text: "Ingrese un presupuesto válido",
     });
-    document.getElementById("btn").disabled = true;
+   
     document.getElementById("alertainput").value = "";
   }
 
@@ -30,21 +30,44 @@ function opciones() {
   let cantidad = parseInt(document.getElementById("cantidad").value);
   let nombre = document.getElementById("nombre").value;
 
-  gastos.push({ nombre, cantidad });
-  console.log(gastos);
-
   if (nombre === "" || isNaN(cantidad) || cantidad <= 0) {
     Swal.fire({
       title: "Error",
       text: "Ingrese un nombre y una cantidad válida",
     });
-    document.getElementById("btn").disabled = true;
-  } else {
-    gastos_totales -= cantidad;
-    console.log(gastos_totales);
+    return;
+  } else if (cantidad > gastos_totales) {
+    Swal.fire({
+      title: "Error",
+      text: "La cantidad ingresada supera el presupuesto restante",
+    });
 
-    pintar();
+    parseInt(document.getElementById("cantidad").value="");
+    document.getElementById("nombre").value="";
+    return;
+  }
+  
+  else {
    
+    gastos.push({ nombre, cantidad });
+    gastos_totales -= cantidad;
+   
+    pintar();
+    if (gastos_totales<= 0) {
+   
+      let correcto = document.getElementById("correcto");
+      correcto.textContent = "correcto";
+      correcto.style.display = "block";
+      let agotado = document.getElementById("agotado");
+      agotado.textContent = "Presupuesto agotado";
+      agotado.style.display = "block";
+      document.getElementById("btn").disabled = true;
+      
+
+    } else {
+        document.getElementById("agotado").textContent = "";
+        document.getElementById("btn").disabled = false;
+    }
 
     document.getElementById("restante").textContent = `Restante: ${formatearMoneda(gastos_totales)}`;
 
@@ -115,6 +138,26 @@ function borrar(index, item) {
     console.log("Este es el porcentaje" + porcentaje);
   } else {
     document.getElementById("restante").style.backgroundColor = "#5a88de";
+    
+  }
+
+  if (gastos_totales<= 0) {
+    document.getElementById("btn").disabled = false;
+    let correcto = document.getElementById("correcto");
+    correcto.textContent = "correcto";
+    correcto.style.display = "block";
+    let agotado = document.getElementById("agotado");
+    agotado.textContent = "Presupuesto agotado";
+    agotado.style.display = "block";
+    document.getElementById("btn").disabled = true;
+
+  } else {
+      document.getElementById("agotado").textContent = "";
+      correcto.textContent = "correcto";
+      correcto.style.display = "none";
+      agotado.textContent = "Presupuesto agotado";
+      agotado.style.display = "none";
+      document.getElementById("btn").disabled = false;
   }
 }
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+
+    <script>
+        let productos = [
+            {id:1, nombre:"zapatos", precio:10000, img:"https://previews.123rf.com/images/nikiteev/nikiteev1705/nikiteev170500044/78451861-ilustraci%C3%B3n-de-dibujos-animados-de-vectores-zapatos-de-cuero-marr%C3%B3n-shoe-side-ver.jpg?fj=1"},
+            {id:2, nombre:"Camisa", precio:5000, img:"https://us.123rf.com/450wm/rubynurbaidi/rubynurbaidi2205/rubynurbaidi220500010/185647268-dibujos-animados-de-camisa.jpg?ver=6"},
+            {id:3, nombre:"zapatos", precio:10000, img:"https://previews.123rf.com/images/nikiteev/nikiteev1705/nikiteev170500044/78451861-ilustraci%C3%B3n-de-dibujos-animados-de-vectores-zapatos-de-cuero-marr%C3%B3n-shoe-side-ver.jpg?fj=1"},
+            {id:4, nombre:"Camisa", precio:5000, img:"https://us.123rf.com/450wm/rubynurbaidi/rubynurbaidi2205/rubynurbaidi220500010/185647268-dibujos-animados-de-camisa.jpg?ver=6"},
+            {id:5, nombre:"zapatos", precio:10000, img:"https://previews.123rf.com/images/nikiteev/nikiteev1705/nikiteev170500044/78451861-ilustraci%C3%B3n-de-dibujos-animados-de-vectores-zapatos-de-cuero-marr%C3%B3n-shoe-side-ver.jpg?fj=1"},
+            {id:6, nombre:"Camisa", precio:5000, img:"https://us.123rf.com/450wm/rubynurbaidi/rubynurbaidi2205/rubynurbaidi220500010/185647268-dibujos-animados-de-camisa.jpg?ver=6"},
+            {id:7, nombre:"zapatos", precio:10000, img:"https://previews.123rf.com/images/nikiteev/nikiteev1705/nikiteev170500044/78451861-ilustraci%C3%B3n-de-dibujos-animados-de-vectores-zapatos-de-cuero-marr%C3%B3n-shoe-side-ver.jpg?fj=1"},
+            {id:8, nombre:"Camisa", precio:5000, img:"https://us.123rf.com/450wm/rubynurbaidi/rubynurbaidi2205/rubynurbaidi220500010/185647268-dibujos-animados-de-camisa.jpg?ver=6"},
+        ] 
+
+        document.addEventListener("DOMContentLoaded",()=>{
+            pintar()
+        })
+
+        function pintar(){
+
+            let fragment = document.createDocumentFragment();
+            productos.forEach((item,index)=>{
+                let div = document.createElement("div");
+   
+                let img = document.createElement("img");
+              img.classList.add("rojo")
+                img.src= item.img
+                let h2 = document.createElement("h2");
+                h2.textContent = item.nombre
+                let p = document.createElement("p")
+                let button = document.createElement("button")
+                button.textContent = "agregar al carrito"
+                button.addEventListener("click",()=>{
+                    console.log(item.id);
+                })
+                p.textContent = item.precio
+                div.appendChild(img)
+                div.appendChild(h2)
+                div.appendChild(p)
+                div.appendChild(button)
+                fragment.appendChild(div)
+
+            })
+
+            document.getElementById("container").appendChild(fragment)
+        }
+    </script>
+</body>
+<style>
+    #container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        width: 90%;
+        border: 2px solid green;
+
+    }
+    .rojo{
+        width: 50px;
+        height: 50px;
+    }
+
+    
+</style>
+</html>
