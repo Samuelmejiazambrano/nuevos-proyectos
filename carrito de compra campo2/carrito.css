@@ -6,22 +6,23 @@
 
 .contenedor {
   display: grid;
-  grid-template-rows: 10% 20% 90% 10%;
+  grid-template-rows: 10% 20% auto   12%;
 }
 
 .cabecera2 img {
   height: 80px;
   width: 100px;
-  margin-right: 10%;
+  position: relative;
+  right: 4%;
 }
 
-.cabecera2  button{
+/* .cabecera2  button{
   width: 150px;
   height: 100px;
   border-radius: 50%;
   background-image: url(./3144456.png);
      
-}
+} */
 .cabecera2 {
   display: flex;
   background-color: green;
@@ -38,7 +39,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  right: 20%;
+  right: 30%;
   color: white;
 }
 .caja2 {
@@ -53,15 +54,23 @@
   position: relative;
   bottom: 10%;
 }
-.caja2 input {
-  width: 30%;
-  height: 10%;
+.caja2 #input input {
+  width: 40%;
+  height: 50%;
   border-radius: 5px solid white;
+  border-radius: 10px;
+}
+#input{
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
 }
 #card {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
+  min-height: 500px;
   margin-top: 10%;
 }
 
@@ -71,7 +80,7 @@
 }
 
 #card div {
-  height: 400px; /* Ajustar la altura de los elementos */
+  height: auto; /* Ajustar la altura de los elementos */
   width: 280px; /* Ajustar el ancho de los elementos */
   display: flex;
   flex-direction: column;
@@ -81,7 +90,9 @@
   margin: 20px;
   border-radius: 20px;
   margin-left: 10%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  position: relative;
+  bottom: 5%;
  
 }
 
@@ -96,6 +107,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: green;
+  position: relative;
+  bottom: 0;
 }
 .footer p {
   display: flex;
@@ -104,12 +117,14 @@
   align-items: center;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }
 .footer > * {
-  height: 10%;
+  /* height: 10%; */
 }
 .footer .h1f h1 {
   margin-top: 5%;
+  color: white;
 }
 #card p {
   margin: 5px;
@@ -118,17 +133,29 @@
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  bottom: 8%;
+  
 }
 #card img {
   width: 280px;
   height: 150px;
   position: relative;
-  bottom: 68px;
+  /* bottom: 68px; */
   border-top-left-radius: 20px;
 border-top-right-radius: 20px;
 }
 #card > *:hover {
   transform: scale(1.1);
+  box-shadow: 1px 1px 2px 1px;
+}
+#card h2 {
+  
+  position: relative;
+  bottom: 8%;
+  font-size: 20px;
+  color: black;
 }
 .logo {
   display: flex;
@@ -150,13 +177,15 @@ h1 {
   color: white;
 }
 .contenido h1{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  font-size: 60px;
 }
 #card button {
   width: 150px;
-  margin-top: 5%;
-  height: 10%;
+  /* margin-top: 5%; */
+  position: relative;
+  bottom: 5%;
+  height: 40px;
   border-radius: 10px;
   background-color: green;
   font-family: Arial, Helvetica, sans-serif;
@@ -166,22 +195,24 @@ h1 {
   background-color: white;
   color: black;
 }
+
 .n {
   color: black;
 }
 .contenido h1 {
   margin-top: 10%;
   color: green;
+
 }
-.img2 {
-  /* position: relative;
-    left: 10%; */
-}
+
 table {
   background-color:green;
   width: 45%;
-  margin-left: 40%;
+  /* margin-left: 40%; */
   padding: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 thead {
   color: white;
@@ -189,16 +220,19 @@ thead {
   font-family: Arial, Helvetica, sans-serif;
   
 }
-tbody{
+tbody tr td{
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: brown;
+  border: 1px solid white;
 
 }
  table tr td{
 
-       width:10% ;
+       width:20% ;
         text-align: center;
        align-items: center;
+  
  }
  table>*{
 
@@ -210,6 +244,59 @@ tbody{
      
  }
  .imga{
-
+     
     
  }
+ .cabecera2 button {
+  width: 120px;
+  height: 80px;
+  border-radius: 50%;
+  background-image: url(./icono.png);
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el botón */
+  background-position: center; /* Centra la imagen en el botón */
+  background-repeat: no-repeat; /* Evita la repetición de la imagen */
+  border: none; 
+  position: relative;
+  right: 10%;
+  background-color: transparent;
+  cursor: pointer;
+}
+.total {
+  font-size: 25px;
+  color: white;
+}
+.total2 {
+  font-size: 20px;
+  color: white;
+}
+.cabecera2 button:hover{
+     background-color: antiquewhite;
+
+}
+#oculto{
+
+  display: none;
+  margin: auto;
+    margin-top: 150px;
+    width: 50%; 
+    overflow: scroll;
+    max-height: 500px;
+}
+#cerrar{
+
+       display: none;
+       width: 7%;
+       position: relative;
+       bottom:10px;
+       left: 40%;
+       background-color: transparent;
+       border: none; 
+}
+@media (max-width: 1200px) {
+  #card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10%;
+    height: 150%;
+  }
+}

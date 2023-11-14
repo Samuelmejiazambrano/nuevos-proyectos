@@ -6,63 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./carrito.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
 
 <body>
     <script src="./carrito.js"></script>
-    <div class="contenedor">
+    <div class="contenedor " id="contenedor">
         <div id="cabecera">
 
         </div>
 
         <div class=" caja2" id="caja2">
+            
+           
+            <div id="input">
+                <h1>Investiga Herramientas Para Una Mejor Produccion </h1>
+                <input type="text" placeholder="Busqueda de Herramientas">
+            </div>
 
-            <h1>Investiga Herramientas Para Una Mejor Produccion </h1>
-            <input type="text" placeholder="Busqueda de Herramientas">
-            <table>
+
+
+
+
+
+        </div>
+
+       
+        <div class="contenido" id="contenido">
+            <h1 id="h1">Herramientas Agricolas</h1>
+       
+            <table id="oculto">
+              
                 <thead>
-
+          
                     <tr>
+                    
                         <td>Nombre</td>
                         <td>Precio</td>
                         <td>Cantidad</td>
                         <td>Subtotal</td>
                         <td>Producto</td>
-
+                        <td></td>
+                        <td class="cerrar"> <button id="cerrar" onclick="cerrar()"> ❌</button></td>
+    
                     </tr>
-
+    
                 </thead>
                 <tbody id="tabla">
-                   <tr>
-
-                     
-                   </tr>
-                      
+                    <tr>
+    
+    
+                    </tr>
+    
                 </tbody>
-              
+    
             </table>
 
- 
-               
-       
-
-        </div>
-
-
-        <div class="contenido" id="contenido">
-            <h1>Herramientas Agricolas</h1>
-
-
+           
             <div id="card"></div>
+              
 
-
-        </div>
-        <div class="footer">
+             </div>
+        <div class="footer" id="footer">
             <div class="h1f">
                 <h1>Agrocampo@Derechos Reservados</h1>
             </div>
-            <div>
+            <div id="atencion">
                 <h1>Atencion</h1>
                 <p>Teléfono: (+34) 958 10 22 56 </p>
                 <p> Whatsapp: (+34) 622 24 47 80</p>
@@ -73,7 +83,7 @@
         </div>
 
     </div>
-   
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
