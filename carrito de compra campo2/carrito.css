@@ -90,7 +90,7 @@
   margin: 20px;
   border-radius: 20px;
   margin-left: 10%;
-  /* border: 1px solid black; */
+  /* border: 0.5px solid black; */
   position: relative;
   bottom: 5%;
  
@@ -292,11 +292,41 @@ tbody tr td{
        background-color: transparent;
        border: none; 
 }
+
 @media (max-width: 1200px) {
   #card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10%;
-    height: 150%;
+    grid-template-columns:repeat(3, 20%);
+    gap: 15%;
+    /* height: 150%; */
+  }
+  .footer{
+
+       position: relative;
+       top:280%;
+  }
+}
+@media (max-width: 1000px) {
+  #card {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 5%;
+    /* height: 150%; */
+  }
+  /* .footer{
+
+       position: relative;
+       top:280%;
+  } */
+}
+@media (max-width: 700px) {
+  #card {
+    display: grid;
+    grid-template-columns:repeat(1, 20%);
+    gap: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 150%; */
   }
 }

@@ -256,6 +256,14 @@ function pintar_tabla() {
         td1.textContent = "Total";
         td1.classList.add("total")
         td2.textContent = formatearMoneda(calcularTotal());
+        let eliminar2= document.createElement("button");
+        eliminar2.addEventListener("click", () => {
+          vaciar();
+        });
+           eliminar2.textContent = "vaciar";
+           td6.appendChild(eliminar2);
+
+
        
         td2.classList.add("total2")
         frag.appendChild(tr);
@@ -306,7 +314,7 @@ function mostrar_tabla() {
                 // caja2.style.height="100px"
                 h1.style.display="none"
                
-                contenedor.style.gridTemplateRows = "30% 80% 40%";
+                contenedor.style.gridTemplateRows = "30% 80% 45%";
                  cerrar.style.display="block"
                  
      }else if(productosEnCarrito.length==0 ){
@@ -352,4 +360,11 @@ function cerrar() {
    input.style.position="relative";
    input.style.top="40%";
    input.style.alignItems= "center";
+}
+
+function vaciar() {
+  
+  productosEnCarrito.splice(0,productosEnCarrito.length)
+  pintar_tabla();
+
 }
