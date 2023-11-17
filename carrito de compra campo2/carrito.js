@@ -24,7 +24,7 @@ let productos = [
     id: 4,
     nombre: "Aradoras",
     precio: 150000000,
-    img: "./aradora.jpeg",
+    img: "./aradora.jpg",
     imga:"./estrella3.png"
   },
   {
@@ -59,7 +59,7 @@ let productos = [
     id: 9,
     nombre: "Fumigadora Integra 20 Lt",
     precio: 318100,
-    img: "./royal_condor-removebg-preview_2542344d-1bba-4b30-90ea-2feb62c6d33c_500x.webp",
+    img: "./fumigadora2.jpg",
     imga:"./estrella3.png"
   },
   {

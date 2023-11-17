@@ -225,6 +225,7 @@ tbody tr td{
   font-family: Arial, Helvetica, sans-serif;
   background-color: brown;
   border: 1px solid white;
+  color: white;
 
 }
  table tr td{
@@ -311,13 +312,16 @@ tbody tr td{
     display: grid;
     grid-template-columns:repeat(2, 1fr);
     gap: 5%;
+   
+    justify-content: center;
+    align-items: center;
     /* height: 150%; */
   }
-  /* .footer{
+  .footer{
 
        position: relative;
-       top:280%;
-  } */
+       top:200%;
+  }
 }
 @media (max-width: 700px) {
   #card {
@@ -327,6 +331,21 @@ tbody tr td{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     /* height: 150%; */
   }
+   .footer{
+
+       position: relative;
+       top:0;
+       height: 50%;
+  }
+  .contenido h1{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+        width: 100%;
+  }
+ 
 }
