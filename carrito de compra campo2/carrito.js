@@ -117,6 +117,7 @@ function pintar(params) {
     let img2 = document.createElement("img");
     img2.src = item.img1;
     img2.classList.add("img2");
+ 
     
     let p2 = document.createElement("p");
     p2.textContent = item.nombre;
@@ -124,10 +125,11 @@ function pintar(params) {
     img3.addEventListener("click", () => {
           mostrar_tabla()
     });
+
     img3.src = item.img2;
     let Span = document.createElement("span");
     Span.textContent = item.span;  
-   
+      img3.classList.add("img3");
     Span.id = "cantidadCarritoSpan";
     
     div2.appendChild(img2);
@@ -300,6 +302,7 @@ function mostrar_tabla() {
      let atencion=document.getElementById("atencion")
      let contenedor = document.getElementById("contenedor");
      let cerrar= document.getElementById("cerrar");
+     let imagen=document.getElementsByClassName("img3")
      
     
      if (productosEnCarrito.length>0) {
@@ -315,10 +318,13 @@ function mostrar_tabla() {
                tabla2.style.position="relative"
                 // caja2.style.height="100px"
                 h1.style.display="none"
-               
-                contenedor.style.gridTemplateRows = "250px 70% 360px";
+             
+                contenedor.style.gridTemplateRows = "350px 70% 360px";
                  cerrar.style.display="block"
-                 
+                 if (window.innerWidth < 1200) {
+                  contenedor.style.display="grid";
+                  contenedor.style.gridTemplateRows= "350px 70% 760px";
+                }
      }else if(productosEnCarrito.length==0 ){
          
       Swal.fire({
@@ -361,25 +367,37 @@ function cerrar() {
    input.style.position="relative";
    input.style.top="30%"
    input.style.alignItems= "center";
+  
    
    if (window.innerWidth < 1200) {
     contenedor.style.display="grid";
     contenedor.style.gridTemplateRows= "5% 10% 130%  20%"  ;
   }  if (window.innerWidth < 1000){
     contenedor.style.display="grid";
-    contenedor.style.gridTemplateRows= " 10% 10% 105%  15%"  ;
-
+    contenedor.style.gridTemplateRows= " 10% 10% 120%  15%"  ;
+    footer.style.margintop="22px"
+  
   }
   if (window.innerWidth < 700){
     contenedor.style.display="grid";
-    contenedor.style.gridTemplateRows= " 10% 10% 160%  15%"  ;
-   
+    contenedor.style.gridTemplateRows= " 10% 10% 162%  18%"  ;
+    contenedor.style.width="100%";
+    contenido2.style.height="60%"
      input.style.height="20%"
+     contenido2.style.display="flex";
+     contenido2.style.flexDirection="column";
+     contenido2.style.justifyContent="center";
+     contenido2.style.alignItems="center";
+     footer.style.margintop="32px"
+          
+     document.getElementById("card").style.position="relative"
+     document.getElementById("card").style.Right="10vh"
+    //  document.getElementById("card").style.width="100%"
+    //  contenido2.style.alignItems="center"
+    //  contenido2.style.justifyContent="center"
    
-     contenido.style.alignItems="center"
-     contenido.style.justifyContent="center"
-     contenido.style.position="relative"
-    //  contenido.style.right="2%"
+     
+    
   }
 }
 
