@@ -89,6 +89,7 @@ let cabeza = [
     nombre: "Agrocampo",
     img1: "./logo.jpeg",
     img2: "./icono-carrito-compras-rapido_414847-513.avif",
+    span: ""
   },
 ];
 let subtotal;
@@ -98,6 +99,7 @@ let total = 0;
 let productosEnCarrito = [];
 document.addEventListener("DOMContentLoaded", () => {
   pintar();
+  pintar_tabla();
 });
 
 function formatearMoneda(numero) {
@@ -123,14 +125,21 @@ function pintar(params) {
           mostrar_tabla()
     });
     img3.src = item.img2;
-
+    let Span = document.createElement("span");
+    Span.textContent = item.span;  
+   
+    Span.id = "cantidadCarritoSpan";
+    
     div2.appendChild(img2);
     div2.appendChild(p2);
     div2.appendChild(img3);
+    div2.appendChild(Span)
     fragment.appendChild(div2);
+  
   });
   document.getElementById("cabecera").appendChild(fragment);
-
+  document.getElementById("cantidadCarritoSpan").textContent = productosEnCarrito.length;
+  
   productos.forEach((item, index) => {
     let div = document.createElement("div");
 
@@ -160,7 +169,7 @@ function pintar(params) {
   });
 
   document.getElementById("card").appendChild(fragment);
-
+  
 }
 
 function agregarAlCarrito(producto) {
@@ -185,6 +194,9 @@ function pintar_tabla() {
 
   tbody.innerHTML = "";
 
+ 
+  document.getElementById("cantidadCarritoSpan").textContent = productosEnCarrito.length;
+
   productosEnCarrito.forEach((item, i) => {
     let cant = item.cantidad;
     let precio = item.producto.precio;
@@ -198,11 +210,10 @@ function pintar_tabla() {
     let td5 = document.createElement("td");
     let td6 = document.createElement("td");
 
-  
     td1.textContent = item.producto.nombre;
     td2.textContent = formatearMoneda(item.producto.precio);
     td3.textContent = item.cantidad;
-    td4.textContent=subtotal
+    td4.textContent = subtotal;
     let img = document.createElement("img");
     img.src = item.producto.img;
     img.alt = item.producto.nombre;
@@ -225,52 +236,43 @@ function pintar_tabla() {
     });
     td6.appendChild(eliminar);
     frag.appendChild(tr);
-
-
-     
   });
+
   tbody.appendChild(frag);
 
+  if (productosEnCarrito.length > 0) {
+    let tr = document.createElement("tr");
+    let td1 = document.createElement("td");
+    let td2 = document.createElement("td");
+    let td3 = document.createElement("td");
+    let td4 = document.createElement("td");
+    let td5 = document.createElement("td");
+    let td6 = document.createElement("td");
 
-      
-       
-       if (productosEnCarrito.length > 0) {
-       
-    
-      
-        let tr = document.createElement("tr");
-        let td1 = document.createElement("td");
-        let td2 = document.createElement("td");
-        let td3 = document.createElement("td");
-        let td4 = document.createElement("td");
-        let td5 = document.createElement("td");
-        let td6 = document.createElement("td")
-    
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        tr.appendChild(td4);
-        tr.appendChild(td5);
-        tr.appendChild(td6);
-    
-        td1.textContent = "Total";
-        td1.classList.add("total")
-        td2.textContent = formatearMoneda(calcularTotal());
-        let eliminar2= document.createElement("button");
-        eliminar2.addEventListener("click", () => {
-          vaciar();
-        });
-           eliminar2.textContent = "vaciar";
-           td6.appendChild(eliminar2);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+    tr.appendChild(td6);
 
+    td1.textContent = "Total";
+    td1.classList.add("total");
+    td2.textContent = formatearMoneda(calcularTotal());
+    let eliminar2 = document.createElement("button");
+    eliminar2.addEventListener("click", () => {
+      vaciar();
+    });
+    eliminar2.textContent = "vaciar";
+    td6.appendChild(eliminar2);
 
-       
-        td2.classList.add("total2")
-        frag.appendChild(tr);
-      }
-      document.getElementById("tabla").appendChild(frag);
-      console.log("hola soy precio" + cant);
+    td2.classList.add("total2");
+    frag.appendChild(tr);
+  }
+
+  document.getElementById("tabla").appendChild(frag);
 }
+
 
 function borrar(i) {
   index = i;
@@ -314,7 +316,7 @@ function mostrar_tabla() {
                 // caja2.style.height="100px"
                 h1.style.display="none"
                
-                contenedor.style.gridTemplateRows = "30% 80% 45%";
+                contenedor.style.gridTemplateRows = "250px 70% 360px";
                  cerrar.style.display="block"
                  
      }else if(productosEnCarrito.length==0 ){
@@ -345,21 +347,40 @@ function cerrar() {
   caja.style.display="block"
     
   contenedor.style.display="grid";
-  contenedor.style.gridTemplateRows= " 10% 20% auto   12%";
+  contenedor.style.gridTemplateRows= " 10% 20% 80%   15%";
   h1.style.display="block"
   contenido2.style.display="block"
   contenido.style.display="block"
   contenido.style.display="grid"
-  
-  contenido.style.gridTemplateColumns= " repeat(4, 1fr)" 
+
   cerrar.style.display="none"
    h1.style.display= "flex";
    h1.style.justifyContent= "center";
    h1.style.alignItems= "center";
    input.style.height= "30%";
    input.style.position="relative";
-   input.style.top="40%";
+   input.style.top="30%"
    input.style.alignItems= "center";
+   
+   if (window.innerWidth < 1200) {
+    contenedor.style.display="grid";
+    contenedor.style.gridTemplateRows= "5% 10% 130%  20%"  ;
+  }  if (window.innerWidth < 1000){
+    contenedor.style.display="grid";
+    contenedor.style.gridTemplateRows= " 10% 10% 105%  15%"  ;
+
+  }
+  if (window.innerWidth < 700){
+    contenedor.style.display="grid";
+    contenedor.style.gridTemplateRows= " 10% 10% 160%  15%"  ;
+   
+     input.style.height="20%"
+   
+     contenido.style.alignItems="center"
+     contenido.style.justifyContent="center"
+     contenido.style.position="relative"
+    //  contenido.style.right="2%"
+  }
 }
 
 function vaciar() {
