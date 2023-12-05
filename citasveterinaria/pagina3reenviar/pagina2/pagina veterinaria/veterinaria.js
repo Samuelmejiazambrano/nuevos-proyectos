@@ -47,15 +47,15 @@ function agregarCita() {
       title: "Error",
       text: "Ingrese el nombre del propietario",
     });
-  } else if (telefono.length < 9   ) {
+  } else if (telefono.length < 10  ) {
     Swal.fire({
       title: "Error",
-      text: "cantidad de numeros mayor a 9 digitos"
+      text: "cantidad de numeros mayor a 10 digitos"
     });
-  }else if (telefono.length > 9) {
+  }else if (telefono.length > 10) {
     Swal.fire({
       title: "Error",
-      text: "cantidad de numeros igual a 9 digitos"
+      text: "cantidad de numeros igual a 10 digitos"
     });}
   else if(telefono===""){
     Swal.fire({
