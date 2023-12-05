@@ -1,0 +1,105 @@
+function formulario(){
+
+    let formulario2=document.getElementById("formulario");
+ 
+
+     formulario2.style.top="10%"
+     formulario2.style.display="block"
+     formulario2.style.display="flex"
+     formulario2.style.flexDirection=" column"
+    }
+         
+  function cerrar() {
+    
+    let formulario2=document.getElementById("formulario");
+    
+     formulario2.style.top="-150%"
+  }
+  let citas = [];
+
+  document.addEventListener("DOMContentLoaded", () => {
+agregarCita()
+  });
+
+
+  
+  function agregarCita() {
+     
+       
+    let nombreMascota = document.getElementById("nombreMascota").value;
+    let nombrePropietario = document.getElementById("nombrePropietario").value;
+    let telefono = document.getElementById("telefono").value;
+    let tipoAnimal = document.getElementById("tipoAnimal").value;
+    let fechaCita = document.getElementById("fechaCita").value;
+    let horaCita = document.getElementById("horaCita").value;
+    let sintomas = document.getElementById("sintomas").value;
+     
+      let nuevaCita = {
+          nombreMascota: nombreMascota,
+          nombrePropietario: nombrePropietario,
+          telefono: telefono,
+          tipoAnimal: tipoAnimal,
+          fechaCita: fechaCita,
+          horaCita: horaCita,
+          sintomas: sintomas
+      };
+
+    
+      citas.push(nuevaCita);
+
+      limpiarFormulario();
+
+      console.log(citas);
+    cards()
+  }
+
+  
+  function limpiarFormulario() {
+  
+      document.getElementById("formulario").reset();
+  }
+  function cards(params) {
+
+    
+    let tipoAnimal = document.getElementById("tipoAnimal").value;
+    
+    let fragment = document.createDocumentFragment();
+    
+ document.getElementById("card").innerHTML=""
+       if (tipoAnimal=="perro") {
+        citas.forEach((item, index) => {
+        let div=document.createElement("div");
+        let img=document.createElement("img");
+        let p1=document.createElement("p");
+        let p2=document.createElement("p");
+        let p3=document.createElement("p");
+        let p4=document.createElement("p");
+        let p5=document.createElement("p");
+        let p6=document.createElement("p");
+        let p7=document.createElement("p");
+  
+        let nombreMascota = item.nombreMascota;
+        let nombrePropietario = item.nombrePropietario;
+
+        p1.textContent = nombreMascota;
+            p2.textContent = nombrePropietario;
+        div.appendChild(img);
+        div.appendChild(p1);
+        div.appendChild(p2);
+        div.appendChild(p3);
+        div.appendChild(p4);
+        div.appendChild(p5);
+        div.appendChild(p6);
+        div.appendChild(p7);
+
+        fragment.appendChild(div)
+       
+        })
+        document.getElementById("card").appendChild(fragment);
+        console.log(citas);
+       } else {
+        
+       }
+  
+
+  }
