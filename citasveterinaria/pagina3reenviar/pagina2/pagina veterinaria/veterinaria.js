@@ -98,6 +98,7 @@ function agregarCita() {
     cards(citas);
     filtrarCitas();
     limpiarFormulario();
+    cerrar()
   }
 }
 
@@ -127,6 +128,10 @@ function cards(filtrar) {
     let p5 = document.createElement("p");
     let p6 = document.createElement("p");
     let p7 = document.createElement("p");
+
+    p3.classList.add("telefono");
+    p3.classList.add("telefono-label");
+    
     let select = document.createElement("select");
     select.classList.add("selector");
     select.addEventListener("change", (event) => {
@@ -189,6 +194,9 @@ function cards(filtrar) {
     } else if (item.estado === "anulada") {
       option3.selected = true;
     }
+
+
+
     div.appendChild(img);
     div.appendChild(p1);
     div.appendChild(p2);
@@ -268,7 +276,7 @@ function edita(item) {
     }
   
     cards(citas);
-  
+  cerrar()
 }
 
 

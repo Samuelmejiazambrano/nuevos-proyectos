@@ -282,6 +282,7 @@ function borrar(i) {
   document.getElementById("tabla").innerHTML = "";
   pintar_tabla();
 }
+
 function calcularTotal() {
   let total = 0;
   productosEnCarrito.forEach((item) => {
@@ -319,7 +320,7 @@ function mostrar_tabla() {
                 // caja2.style.height="100px"
                 h1.style.display="none"
              
-                contenedor.style.gridTemplateRows = "350px 70% 360px";
+                contenedor.style.gridTemplateRows = "300px 60% 360px";
                  cerrar.style.display="block"
                  if (window.innerWidth < 1200) {
                   contenedor.style.display="grid";

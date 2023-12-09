@@ -79,7 +79,7 @@
        gap: 50px;
        width: 80%;
        background-color: #909d9e;
-       min-height: 100vh;
+       min-height: 130vh;
     
        
     
@@ -223,4 +223,37 @@
 }
 .cerrar:hover{
    background-color:rgb(216, 210, 197) ;
+}
+@media (max-width: 1350px) {
+   #card{
+
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+
+   
+    }
+   
+
+}
+@media (max-width: 900px) {
+   #card{
+
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+
+   
+    }
+   
+
+}
+@media (max-width: 1050px) {
+   .agregar{
+      width: 50%;
+      height: 10%;
+      font-size: 30px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      border-radius: 20px;
+ }
+   
+
 }

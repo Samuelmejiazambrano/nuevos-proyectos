@@ -125,9 +125,7 @@ margin-left: 5%;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
-.footer > * {
-  /* height: 10%; */
-}
+
 .footer .h1f h1 {
   margin-top: 5%;
   color: white;
@@ -215,7 +213,7 @@ h1 {
 
 table {
   background-color:green;
-  width: 45%;
+  width: 30%;
   /* margin-left: 40%; */
   padding: 2%;
   display: flex;
@@ -247,15 +245,15 @@ tbody tr td{
 
     margin: 10px;
  }
+ table img{
+  padding: 5px;
+ }
  .img2:hover{
      
       display: block;
      
  }
- .imga{
-     
-    
- }
+
  .cabecera2 button {
   width: 450px;
   height: 80px;
@@ -314,10 +312,7 @@ tbody tr td{
    font-size: 40px;
    color: white;
 }
-span{
 
-  
-}
 @media (max-width: 1200px) {
   #card {
     display: grid;
