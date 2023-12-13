@@ -11,7 +11,7 @@ background-size: cover;
    background-position: center center;
    height: 100vh;  */
 
-   background-color: aqua;
+   background-color: rgb(100, 124, 124);
 }
 
 .cont {
@@ -42,12 +42,12 @@ img {
    height: 90%;
    border-radius: 20px;
    margin-top: 5%;
-   background-color: rgba(255, 255, 255, 0.445);
+   background-color: #647C7C;
    box-shadow: 5px 5px 6px 4px;
 }
 
 .proyectos div:hover {
-   background-color: yellow;
+   background-color: rgba(255, 255, 255, 0.445);
 }
 
 .h {
