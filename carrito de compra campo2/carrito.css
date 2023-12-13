@@ -13,7 +13,7 @@
   height: 80px;
   width: 100px;
 margin-left: 5%;
-  /* position: relative; */
+  position: relative;
   /* left: 5%; */
  
 }
@@ -72,6 +72,10 @@ margin-left: 5%;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      text-align: center;
+}
+#input input{
+  text-align: center;
 }
 #card {
   display: grid;
@@ -271,6 +275,7 @@ tbody tr td{
 .total {
   font-size: 25px;
   color: white;
+  padding: 12px;
 }
 .total2 {
   font-size: 20px;

@@ -108,7 +108,7 @@ function formatearMoneda(numero) {
     currency: "USD",
   });
 }
-function pintar(params) {
+function pintar() {
   let fragment = document.createDocumentFragment();
 
   cabeza.forEach((item, index) => {
@@ -175,20 +175,21 @@ function pintar(params) {
 }
 
 function agregarAlCarrito(producto) {
-  let productoExistente = productosEnCarrito.find(
+  const productoEnCarrito = productosEnCarrito.find(
     (p) => p.producto.id === producto.id
   );
 
-  if (productoExistente) {
-    productoExistente.cantidad += 1;
+  if (productoEnCarrito) {
+    productoEnCarrito.cantidad += 1;
   } else {
     productosEnCarrito.push({ producto, cantidad: 1 });
   }
 
   console.log("Este es el carrito actual:", productosEnCarrito);
   pintar_tabla();
-  console.log(productosEnCarrito);
 }
+
+
 
 function pintar_tabla() {
   let tbody = document.querySelector("#tabla");
@@ -277,11 +278,20 @@ function pintar_tabla() {
 
 
 function borrar(i) {
-  index = i;
-  productosEnCarrito.splice(index, 1);
+  const index = i;
+  const productoEnCarrito = productosEnCarrito[index];
+
+  productoEnCarrito.cantidad -= 1;
+
+
+  if (productoEnCarrito.cantidad <= 0) {
+    productosEnCarrito.splice(index, 1);
+  }
+
   document.getElementById("tabla").innerHTML = "";
   pintar_tabla();
 }
+
 
 function calcularTotal() {
   let total = 0;
