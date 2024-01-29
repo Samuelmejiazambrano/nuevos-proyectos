@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./citas.css">
+    <script src="./citas.js"></script>
+</head>
+
+<body>
+
+    <div class="cont">
+        <div class="caja1">
+            <div class="ficho">
+                <h1 id="ficho2">0</h1>
+                <div class="opciones">
+                    <button onclick="fichoAnterior()"> Anterior</button>
+                    <button onclick="fichoSiguiente()"> Siguiente</button>
+                </div>
+               
+            </div>
+            <div class="caja">
+                <h1>Saca tu Ticket</h1>
+                <div><h1 class="ficho3">1</h1></div>
+               
+                <button onclick="ficho()"> Saca tu Turno</button>
+                <button onclick="reiniciarPagina()"> Reiniciar Página</button>
+            </div>
+        </div>
+        <div class="caja2">
+            <h1>Fichos en uso</h1>
+            <table>
+                <thead id="tabla2">
+                    <tr></tr>
+                </thead>
+                <tbody id="tabla"></tbody>
+            </table>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
