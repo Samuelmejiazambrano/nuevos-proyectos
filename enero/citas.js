@@ -4,15 +4,15 @@ let array = [];
 let currentIndex = 0;
 
 function ficho() {
-  let fragment = document.createDocumentFragment(); // Declaración de fragment
+  let fragment = document.createDocumentFragment(); 
   acum += 1;
   acum2 = acum + 1;
   let lista = document.getElementsByClassName("ficho3")[0];
   lista.textContent = acum2;
 
-  array.push({ span: "" }); // Añadir nuevo turno al final de la lista
+  array.push({ span: "" }); 
 
-  let item = array[array.length - 1]; // Obtener el último elemento agregado
+  let item = array[array.length - 1]; 
 
   let tr = document.createElement("tr");
   let td1 = document.createElement("td");
